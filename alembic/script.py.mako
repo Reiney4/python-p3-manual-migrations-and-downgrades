@@ -10,15 +10,15 @@ import sqlalchemy as sa
 ${imports if imports else ""}
 
 # revision identifiers, used by Alembic.
-revision = ${repr(up_revision)}
+; revision = ${repr(up_revision)}
 down_revision = ${repr(down_revision)}
 branch_labels = ${repr(branch_labels)}
 depends_on = ${repr(depends_on)}
 
 
-def upgrade() -> None:
-    op.rename_table('students', 'scholars')
+def upgrade():
+    ${upgrades if upgrades else "pass"}
 
 
-def downgrade() -> None:
-    op.rename_table('scholars', 'students')
+def downgrade():
+    ${downgrades if downgrades else "pass"}
